@@ -36,6 +36,35 @@ ul.task-list li input[type="checkbox"] {
 <link href="immigration_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="immigration_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -70,7 +99,10 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>American politics can be a very passionate game and campaign managers will go to great lengths to have their candidate elected. Immigration stands to be at the forefront of today’s issues. Using a data source concerning Boston’s commuters and immigration, we will see if that is a good means to accomplishing political goals.</p>
+<p><span class="math display">\[
+\widehat{\text{att\_end}}_i = \beta_0 + \beta_1 \cdot \text{treatment}_i + \beta_2 \cdot \text{att\_start}_i + \beta_3 \cdot \text{sex}_i + \beta_4 \cdot \text{race}_i + \beta_5 \cdot \text{liberal}_i + \beta_6 \cdot \text{party}_i + \beta_7 \cdot \text{age}_i + \beta_8 \cdot \text{income}_i + \beta_9 \cdot \text{hisp\_perc}_i
+\]</span></p>
+<p>American politics can be a very passionate game and campaign managers will go to great lengths to have their candidate elected. Immigration stands to be at the forefront of today’s issues. Using a data source concerning Boston’s commuters and immigration, we will see if that is a good means to accomplishing political goals. A weakness of the model will be that the data is from a totally different state from a different region of the USA.</p>
 
 </main>
 <!-- /main column -->
