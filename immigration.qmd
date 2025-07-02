@@ -2,5 +2,14 @@
 title: "xx"
 author: "Eric Butte"
 format: html
+execute: 
+  echo: false
 ---
 
+```{r}
+#| message: false
+library(tidyverse)
+library(primer.data)
+```
+
+American politics can be a very passionate game and campaign managers will go to great lengths to have their candidate elected. Immigration stands to be at the forefront of today's issues. Using a data source concerning Boston's commuters and immigration, we will see if that is a good means to accomplishing political goals. 
