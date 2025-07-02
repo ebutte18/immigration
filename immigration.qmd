@@ -18,4 +18,30 @@ $$
 \widehat{\text{att\_end}}_i = \beta_0 + \beta_1 \cdot \text{treatment}_i + \beta_2 \cdot \text{att\_start}_i + \beta_3 \cdot \text{sex}_i + \beta_4 \cdot \text{race}_i + \beta_5 \cdot \text{liberal}_i + \beta_6 \cdot \text{party}_i + \beta_7 \cdot \text{age}_i + \beta_8 \cdot \text{income}_i + \beta_9 \cdot \text{hisp\_perc}_i
 $$
 
-American politics can be a very passionate game and campaign managers will go to great lengths to have their candidate elected. Immigration stands to be at the forefront of today's issues. Using a data source concerning Boston's commuters and immigration, we will see if that is a good means to accomplishing political goals. A weakness of the model will be that the data is from a totally different state from a different region of the USA.
+$$
+\widehat{\text{att\_end}}_i = 8.45 + 1.55 \cdot \text{treatmentTreated}_i
+$$
+
+```{r}
+#| message: false
+library(knitr)
+library(kableExtra)
+df <- data.frame(
+  Term = c("(Intercept)", "treatmentTreated"),
+  Estimate = c(8.453125, 1.546875),
+  `Std. Error` = c(0.3472114, 0.5213842),
+  Statistic = c(24.345757, 2.966862),
+  `P-value` = c(9.182441e-47, 3.672428e-03),
+  `95% Conf. Low` = c(7.7652365, 0.5139189),
+  `95% Conf. High` = c(9.141013, 2.579831)
+)
+
+kable(df, digits = 2, caption = "Regression Coefficients Summary") %>%
+  kable_styling(full_width = FALSE)
+
+```
+
+
+
+
+American politics can be a very passionate game and campaign managers will go to great lengths to have their candidate elected. Immigration stands to be at the forefront of today's issues. Using a data source concerning Boston's commuters and immigration, we will see if that is a good means to accomplishing political goals. A weakness of the model will be that the data is from a totally different state from a different region of the USA. Utilizing data from Boston commuters in 2012, we tried to predict attitudes towards immigration based on whether the person was exposed to spanish speakers before questioning.The quanity of interest is if data can be valid and stable from a decade prior from a different state and region in the USA. 
